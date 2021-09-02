@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MUTUAL_LEVANTAMIENTO</string>
+    <string name="menu_levantamiento">LEVANTAMIENTO</string>
+    <string name="menu_add">ADD</string>
+    <string name="menu_profile">PROFILE</string>
+    <string name="welcome_to_levantamiento_app">Bienvenido a Levantamiento App</string>
+    <string name="button_login">INICIAR SESION</string>
+</resources>
