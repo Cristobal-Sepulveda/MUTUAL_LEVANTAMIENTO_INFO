@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">MUTUAL_LEVANTAMIENTO</string>
-    <string name="menu_levantamiento">LEVANTAMIENTO</string>
-    <string name="menu_add">ADD</string>
-    <string name="menu_profile">PROFILE</string>
+    <string name="menu__listado_levantamiento">LEVANTAMIENTO</string>
+    <string name="menu_cierre">CIERRE MIGRACION</string>
     <string name="welcome_to_levantamiento_app">Bienvenido a Levantamiento App</string>
     <string name="button_login">INICIAR SESION</string>
-    <string name="ver_pcs_registrados">ver lista de computadores ingresados</string>
+    <string name="opcion_disponible">opcion disponible</string>
     <string name="action_logout">cerrar sesion</string>
+    <string name="menu_nuevo">NUEVO LEVANTAMIENTO</string>
+    <string name="ingrese_valor_hint">Ingrese Valor</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="ingrese_torre">Ingrese Torre</string>
 </resources>

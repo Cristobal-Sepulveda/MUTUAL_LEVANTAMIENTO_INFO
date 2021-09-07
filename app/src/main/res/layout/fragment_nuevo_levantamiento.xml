@@ -1,10 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_st" />
+
+        <TextView
+            android:id="@+id/datoSolicitado_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_big"
+            android:text="@string/ingrese_torre"
+            tools:text="@string/ingrese_torre"
+            android:layout_marginTop="@dimen/space_normal"
+            app:layout_constraintTop_toBottomOf="@+id/logo_imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/datoIngresado_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_normal"
+            android:background="@drawable/custom_border"
+            android:gravity="center"
+            android:hint="@string/ingrese_valor_hint"
+            app:layout_constraintEnd_toEndOf="@+id/datoSolicitado_textView"
+            app:layout_constraintStart_toStartOf="@+id/datoSolicitado_textView"
+            app:layout_constraintTop_toBottomOf="@+id/datoSolicitado_textView" />
+
+        <Button
+            android:id="@+id/ingresarDato_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_normal"
+            android:text="@string/siguiente"
+            app:layout_constraintEnd_toEndOf="@+id/datoIngresado_editText"
+            app:layout_constraintStart_toStartOf="@+id/datoIngresado_editText"
+            app:layout_constraintTop_toBottomOf="@+id/datoIngresado_editText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

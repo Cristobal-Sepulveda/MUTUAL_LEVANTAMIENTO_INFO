@@ -13,12 +13,18 @@ class NuevoLevantamientoFragment: Fragment() {
 
     private lateinit var binding: FragmentNuevoLevantamientoBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_nuevo_levantamiento,container,false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View {
+
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_nuevo_levantamiento,
+            container,
+            false)
+
+        binding.ingresarDatoButton.setOnClickListener{
+
+        }
 
         return binding.root
     }

@@ -8,14 +8,14 @@
         <item
             android:id="@+id/nav_listadoDeLevantamientos"
             android:icon="@drawable/baseline_list_24"
-            android:title="@string/menu_levantamiento" />
+            android:title="@string/menu__listado_levantamiento" />
         <item
             android:id="@+id/nav_nuevoLevantamientoFragment"
             android:icon="@drawable/outline_add_24"
-            android:title="@string/menu_add" />
+            android:title="@string/menu_nuevo" />
         <item
             android:id="@+id/nav_finalizandoMigracionFragment"
             android:icon="@drawable/baseline_check_circle_outline_24"
-            android:title="@string/menu_profile" />
+            android:title="@string/menu_cierre" />
     </group>
 </menu>

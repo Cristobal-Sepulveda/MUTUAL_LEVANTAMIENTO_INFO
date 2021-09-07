@@ -9,19 +9,19 @@
     <fragment
         android:id="@+id/nav_listadoDeLevantamientos"
         android:name="com.example.android.mutual_levantamiento.ui.ListadoDeLevantamientosFragment"
-        android:label="@string/menu_levantamiento"
+        android:label="@string/menu__listado_levantamiento"
         tools:layout="@layout/fragment_listado_de_levantamientos"/>
 
     <fragment
         android:id="@+id/nav_nuevoLevantamientoFragment"
         android:name="com.example.android.mutual_levantamiento.ui.NuevoLevantamientoFragment"
-        android:label="@string/menu_add"
+        android:label="@string/menu_nuevo"
         tools:layout="@layout/fragment_nuevo_levantamiento"/>
 
     <fragment
         android:id="@+id/nav_finalizandoMigracionFragment"
         android:name="com.example.android.mutual_levantamiento.ui.FinalizandoMigracionFragment"
-        android:label="@string/menu_profile"
+        android:label="@string/menu_cierre"
         tools:layout="@layout/fragment_finalizando_migracion"/>
 
 </navigation>
