@@ -10,4 +10,13 @@
     <string name="ingrese_valor_hint">Ingrese Valor</string>
     <string name="siguiente">SIGUIENTE</string>
     <string name="ingrese_torre">Ingrese Torre</string>
+    <string name="seleccione_estado">Seleccione Estado</string>
+    <string name="seleccione_dia_de_interes">Seleccione estado del computador</string>
+    <string name="seleccione_estado_del_computador">seleccione estado del computador</string>
+    <string-array name="estados">
+        <item>Por Migrar</item>
+        <item>Ya Migrado</item>
+        <item>VDI</item>
+        <item>SPARE</item>
+    </string-array>
 </resources>
