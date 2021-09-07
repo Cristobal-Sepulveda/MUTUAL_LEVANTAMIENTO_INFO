@@ -2,22 +2,26 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation.xml"
-    app:startDestination="@id/listadoDeLevantamientos">
+    app:startDestination="@id/nav_listadoDeLevantamientos">
 
     <fragment
-        android:id="@+id/listadoDeLevantamientos"
+        android:id="@+id/nav_listadoDeLevantamientos"
         android:name="com.example.android.mutual_levantamiento.ui.ListadoDeLevantamientosFragment"
-        android:label="@string/menu_levantamiento" />
+        android:label="@string/menu_levantamiento"
+        tools:layout="@layout/fragment_listado_de_levantamientos"/>
 
     <fragment
-        android:id="@+id/nuevoLevantamientoFragment"
+        android:id="@+id/nav_nuevoLevantamientoFragment"
         android:name="com.example.android.mutual_levantamiento.ui.NuevoLevantamientoFragment"
-        android:label="@string/menu_add"/>
+        android:label="@string/menu_add"
+        tools:layout="@layout/fragment_nuevo_levantamiento"/>
 
     <fragment
-        android:id="@+id/finalizandoMigracionFragment"
+        android:id="@+id/nav_finalizandoMigracionFragment"
         android:name="com.example.android.mutual_levantamiento.ui.FinalizandoMigracionFragment"
-        android:label="@string/menu_profile"/>
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_finalizando_migracion"/>
 
 </navigation>
