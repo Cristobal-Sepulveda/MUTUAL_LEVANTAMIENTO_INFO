@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/listadoDeLevantamientos">
+
+    <fragment
+        android:id="@+id/listadoDeLevantamientos"
+        android:name="com.example.android.mutual_levantamiento.ui.ListadoDeLevantamientosFragment"
+        android:label="@string/menu_levantamiento" />
+
+    <fragment
+        android:id="@+id/nuevoLevantamientoFragment"
+        android:name="com.example.android.mutual_levantamiento.ui.NuevoLevantamientoFragment"
+        android:label="@string/menu_add"/>
+
+    <fragment
+        android:id="@+id/finalizandoMigracionFragment"
+        android:name="com.example.android.mutual_levantamiento.ui.FinalizandoMigracionFragment"
+        android:label="@string/menu_profile"/>
+
+</navigation>

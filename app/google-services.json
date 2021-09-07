@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "423024310271",
+    "project_id": "mutual-levantamiento-info",
+    "storage_bucket": "mutual-levantamiento-info.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423024310271:android:c50479822aea3e341419ca",
+        "android_client_info": {
+          "package_name": "com.example.android.mutual_levantamiento"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423024310271-f95cf66dtrknlnt68spsmmh3v5lc9uk9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.mutual_levantamiento",
+            "certificate_hash": "99f4f1b3c8916f9fe4c619ee357ff3052db9d626"
+          }
+        },
+        {
+          "client_id": "423024310271-731gqhogff15jp1k1mgk247qi9p9kkjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMViud3wCjK5o4zqS18fPyvjCo9eiSnSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423024310271-731gqhogff15jp1k1mgk247qi9p9kkjq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

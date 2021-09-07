@@ -47,10 +47,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_logout -> {
-                FirebaseAuth.getInstance().signOut()
-                this.finish()
-                startActivity(Intent(this.applicationContext, AuthenticationActivity::class.java))
+            R.id.action_settings -> {
+
             }
         }
         return super.onOptionsItemSelected(item)

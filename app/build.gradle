@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.android.mutual_levantamiento"
-        minSdkVersion 19
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -83,7 +83,7 @@ dependencies {
 
     //FireBase
     // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:26.8.0')
+    implementation platform('com.google.firebase:firebase-bom:28.4.0')
     // Add the dependencies for the desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
     implementation 'com.firebaseui:firebase-ui-auth:6.4.0'

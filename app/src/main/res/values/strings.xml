@@ -5,4 +5,6 @@
     <string name="menu_profile">PROFILE</string>
     <string name="welcome_to_levantamiento_app">Bienvenido a Levantamiento App</string>
     <string name="button_login">INICIAR SESION</string>
+    <string name="ver_pcs_registrados">ver lista de computadores ingresados</string>
+    <string name="action_logout">cerrar sesion</string>
 </resources>
