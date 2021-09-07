@@ -1,4 +1,4 @@
-package com.example.android.mutual_levantamiento.ui
+package com.example.android.mutual_levantamiento.ui.nuevoLevantamiento
 
 import android.content.Context
 import android.os.Bundle
@@ -9,25 +9,29 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import com.example.android.mutual_levantamiento.R
+import com.example.android.mutual_levantamiento.base.BaseFragment
 import com.example.android.mutual_levantamiento.databinding.FragmentNuevoLevantamientoBinding
 import com.example.android.mutual_levantamiento.utils.customVariables
+import org.koin.android.ext.android.inject
 
-class NuevoLevantamientoFragment: Fragment() {
+class NuevoLevantamientoFragment(): BaseFragment() {
+
+    override val _viewModel: NuevoLevantamientoViewModel by inject()
 
     private lateinit var binding: FragmentNuevoLevantamientoBinding
+    private var questionIndex = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-
-        var questionIndex = 0
 
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_nuevo_levantamiento,
             container,
             false)
+        binding.lifecycleOwner = this
+
 
         val estados = resources.getStringArray(R.array.estados)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, estados)
@@ -61,6 +65,13 @@ class NuevoLevantamientoFragment: Fragment() {
             }
         }
 
+        _viewModel.levantamientoIsDone.observe(viewLifecycleOwner, {
+            if(it){
+                _viewModel.saveLevantamiento(
+
+                )
+            }
+        })
         return binding.root
     }
 

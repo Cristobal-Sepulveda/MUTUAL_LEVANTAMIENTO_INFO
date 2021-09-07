@@ -58,6 +58,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //Coroutines Dependencies
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
     //Koin Dependency Injection
     implementation "org.koin:koin-android:$koinVersion"
     implementation "org.koin:koin-androidx-viewmodel:$koinVersion"

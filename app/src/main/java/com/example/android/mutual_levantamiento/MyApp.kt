@@ -4,6 +4,7 @@ import android.app.Application
 import android.app.NotificationManager
 import androidx.core.content.ContextCompat
 import androidx.work.*
+import com.example.android.mutual_levantamiento.ui.nuevoLevantamiento.NuevoLevantamientoViewModel
 import com.example.android.onematchproject.data.AppDataSource
 import com.example.android.onematchproject.data.AppRepository
 import com.example.android.onematchproject.data.app_database.getDatabase
@@ -24,6 +25,16 @@ class MyApp : Application() {
          * using Koin Library as a service locator
          */
         val myModule = module {
+
+            //Declare singleton definitions to be later injected using by inject()
+
+            single {
+                NuevoLevantamientoViewModel(
+                    get(),
+                    get() as AppDataSource
+                )
+            }
+
             //LOCAL_DATABASE, here im creating the local database in the first start and
             // after that, the db instance persist on the User phone, even if he close the app
             single{getDatabase(this@MyApp).levantamientoDao}
