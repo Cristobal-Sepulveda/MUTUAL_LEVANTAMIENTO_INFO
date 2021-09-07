@@ -9,7 +9,7 @@ object customVariables {
     "Ingrese estado",
     "Ingrese serial",
     "Ingrese activo fijo",
-    "Ingrese ingrese ip",
+    "Ingrese ingrese IP",
     "Ingrese MAC",
     "Ingrese usuario",
     "Ingrese clave",
