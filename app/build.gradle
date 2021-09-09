@@ -76,6 +76,10 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
     implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
 
+
+    //RecyclerView
+    implementation "androidx.recyclerview:$recyclerViewVersion"
+    
     //Room dependencies
     implementation "androidx.room:room-ktx:$roomVersion"
     implementation "androidx.room:room-runtime:$roomVersion"

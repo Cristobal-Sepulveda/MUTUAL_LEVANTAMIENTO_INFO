@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/nav_listadoDeLevantamientos"
-        android:name="com.example.android.mutual_levantamiento.ui.ListadoDeLevantamientosFragment"
+        android:name="com.example.android.mutual_levantamiento.ui.listadoDeLevantamientos.ListadoDeLevantamientosFragment"
         android:label="@string/menu__listado_levantamiento"
         tools:layout="@layout/fragment_listado_de_levantamientos"/>
 

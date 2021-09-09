@@ -1,5 +1,6 @@
 package com.example.android.mutual_levantamiento.data.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -17,7 +18,7 @@ interface LevantamientoDao {
     fun getLevantamiento(levantamiento_id: String): LEVANTAMIENTO_DBO
 
     @Query("select * from LEVANTAMIENTO_DBO")
-    fun getLevantamientos(): List<LEVANTAMIENTO_DBO>
+    fun getLevantamientos(): LiveData<List<LEVANTAMIENTO_DBO>>
 
     @Query("delete from LEVANTAMIENTO_DBO")
     fun deleteLevantamientos()

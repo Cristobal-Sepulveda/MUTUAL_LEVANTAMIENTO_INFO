@@ -2,6 +2,7 @@ package com.example.android.mutual_levantamiento.ui.nuevoLevantamiento
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.android.mutual_levantamiento.R
 import com.example.android.mutual_levantamiento.base.BaseFragment
+import com.example.android.mutual_levantamiento.data.DBO.LEVANTAMIENTO_DBO
 import com.example.android.mutual_levantamiento.databinding.FragmentNuevoLevantamientoBinding
 import com.example.android.mutual_levantamiento.utils.customVariables
 import org.koin.android.ext.android.inject
@@ -21,6 +23,22 @@ class NuevoLevantamientoFragment(): BaseFragment() {
 
     private lateinit var binding: FragmentNuevoLevantamientoBinding
     private var questionIndex = 0
+    var datosIngresadosEnEditText = arrayListOf<String>()
+    var objectToDatabase = LEVANTAMIENTO_DBO(
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+    )
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -30,6 +48,8 @@ class NuevoLevantamientoFragment(): BaseFragment() {
             R.layout.fragment_nuevo_levantamiento,
             container,
             false)
+
+        binding.viewModel = _viewModel
         binding.lifecycleOwner = this
 
 
@@ -42,34 +62,68 @@ class NuevoLevantamientoFragment(): BaseFragment() {
         binding.autoCompleteTextView.visibility = View.GONE
 
         binding.ingresarDatoButton.setOnClickListener{
-            if(questionIndex == 12){
-                Toast.makeText(context, "Computador Ingresado", Toast.LENGTH_LONG).show()
-                questionIndex = 0
-                closeKeyboardAndClearEditText(binding.datoIngresadoEditText)
-                binding.datoSolicitadoTextView.text = customVariables.listOfRequiredData[questionIndex]
-            }
-            if(questionIndex == 4){
-                questionIndex++
-                binding.datoSolicitadoTextView.text = customVariables.listOfRequiredData[questionIndex]
-                binding.datoIngresadoEditText.visibility = View.GONE
-                binding.textField.visibility = View.VISIBLE
-                binding.autoCompleteTextView.visibility = View.VISIBLE
-                closeKeyboardAndClearEditText(binding.datoIngresadoEditText)
-            }else{
-                questionIndex++
-                closeKeyboardAndClearEditText(binding.datoIngresadoEditText)
-                binding.datoSolicitadoTextView.text = customVariables.listOfRequiredData[questionIndex]
-                binding.datoIngresadoEditText.visibility = View.VISIBLE
-                binding.textField.visibility = View.GONE
-                binding.autoCompleteTextView.visibility = View.GONE
+            when(questionIndex){
+                12 ->{
+                    binding.ingresarDatoButton.text = "SIGUIENTE"
+                    datosIngresadosEnEditText.add(binding.datoIngresadoEditText.text.toString())
+                    Toast.makeText(context, "Computador Ingresado", Toast.LENGTH_LONG).show()
+                    questionIndex = 0
+                    closeKeyboardAndClearEditText(binding.datoIngresadoEditText)
+                    binding.datoSolicitadoTextView.text = customVariables.listOfRequiredData[questionIndex]
+                    Log.i("TAG", questionIndex.toString())
+                    objectToDatabase = LEVANTAMIENTO_DBO(
+                        datosIngresadosEnEditText[0],
+                        datosIngresadosEnEditText[1],
+                        datosIngresadosEnEditText[2],
+                        datosIngresadosEnEditText[3],
+                        datosIngresadosEnEditText[4],
+                        datosIngresadosEnEditText[5],
+                        datosIngresadosEnEditText[6],
+                        datosIngresadosEnEditText[7],
+                        datosIngresadosEnEditText[8],
+                        datosIngresadosEnEditText[9],
+                        datosIngresadosEnEditText[10],
+                        datosIngresadosEnEditText[11],
+                        datosIngresadosEnEditText[12]
+                    )
+                    Log.i("TAG", "$objectToDatabase")
+                    _viewModel.levantamientoReady()
+                }
+                11 ->{
+                    Log.i("TAG", questionIndex.toString())
+                    datosIngresadosEnEditText.add(binding.datoIngresadoEditText.text.toString())
+                    questionIndex++
+                    binding.ingresarDatoButton.text = "Guardar Levantamiento"
+                    closeKeyboardAndClearEditText(binding.datoIngresadoEditText)
+                    binding.datoSolicitadoTextView.text = customVariables.listOfRequiredData[questionIndex]
+                }
+                4 ->{
+                    Log.i("TAG", questionIndex.toString())
+                    datosIngresadosEnEditText.add(binding.datoIngresadoEditText.text.toString())
+                    questionIndex++
+                    binding.datoSolicitadoTextView.text = customVariables.listOfRequiredData[questionIndex]
+                    binding.datoIngresadoEditText.visibility = View.GONE
+                    binding.textField.visibility = View.VISIBLE
+                    binding.autoCompleteTextView.visibility = View.VISIBLE
+                    closeKeyboardAndClearEditText(binding.datoIngresadoEditText)
+                }
+                else ->{
+                    Log.i("TAG", questionIndex.toString())
+                    datosIngresadosEnEditText.add(binding.datoIngresadoEditText.text.toString())
+                    closeKeyboardAndClearEditText(binding.datoIngresadoEditText)
+                    questionIndex++
+                    binding.datoSolicitadoTextView.text = customVariables.listOfRequiredData[questionIndex]
+                    binding.datoIngresadoEditText.visibility = View.VISIBLE
+                    binding.textField.visibility = View.GONE
+                    binding.autoCompleteTextView.visibility = View.GONE
+                }
             }
         }
 
         _viewModel.levantamientoIsDone.observe(viewLifecycleOwner, {
             if(it){
-                _viewModel.saveLevantamiento(
-
-                )
+                _viewModel.saveLevantamiento(objectToDatabase)
+                _viewModel.levantamientoIsDone
             }
         })
         return binding.root
