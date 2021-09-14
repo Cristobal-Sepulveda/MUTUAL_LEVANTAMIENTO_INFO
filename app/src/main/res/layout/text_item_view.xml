@@ -1,37 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
             name ="levantamientoItem"
-            type ="com.example.android.mutual_levantamiento.data.DBO.LEVANTAMIENTO_DBO"/>
+            type ="com.example.android.mutualLevantamiento.data.domainObject.LEVANTAMIENTO"/>
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/space_normal">
+        android:layout_margin="@dimen/space_normal"
+        android:background="@drawable/custom_border">
 
         <TextView
-            android:id="@+id/levantamientoSala"
+            android:id="@+id/torreTitle_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_very_small"
-            android:text="@{levantamientoItem.sala}"
-            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:text="@string/torre"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toBottomOf="@+id/levantamientoTorre"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/levantamientoTorre" />
+
+        <TextView
+            android:id="@+id/pisoTitle_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/piso"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toBottomOf="@+id/levantamientoPiso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/levantamientoPiso" />
+
+        <TextView
+            android:id="@+id/levantamientoTorre"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_border"
+            android:text="@{levantamientoItem.torre}"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/torreTitle_textView"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="TEXTTEXTTEXT" />
+            tools:text="TORRE" />
+
+        <TextView
+            android:id="@+id/levantamientoPiso"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_border"
+            android:text="@{levantamientoItem.piso}"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintStart_toStartOf="@+id/levantamientoTorre"
+            app:layout_constraintTop_toBottomOf="@+id/levantamientoTorre"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/unidadTitle_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unidad"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toBottomOf="@+id/levantamientoUnidad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/levantamientoUnidad" />
+
+        <TextView
+            android:id="@+id/salaTitle_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sala"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toBottomOf="@+id/levantamientoSala"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/levantamientoUnidad" />
 
         <TextView
             android:id="@+id/levantamientoUnidad"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_border"
+            android:text="@{levantamientoItem.unidad}"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintStart_toStartOf="@+id/levantamientoPiso"
+            app:layout_constraintTop_toBottomOf="@+id/levantamientoPiso"
+            tools:text="UNIDAD" />
+
+        <TextView
+            android:id="@+id/levantamientoSala"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_border"
+            android:text="@{levantamientoItem.sala}"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintStart_toStartOf="@+id/levantamientoUnidad"
+            app:layout_constraintTop_toBottomOf="@+id/levantamientoUnidad"
+            tools:text="SALA" />
+
+        <TextView
+            android:id="@+id/modeloTitle_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_very_small"
+            android:text="@string/modelo"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:text="@{levantamientoItem.unidad}"
+            app:layout_constraintBottom_toBottomOf="@+id/levantamientoModelo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/levantamientoSala"
-            tools:text="TEXTTEXTTEXT" />
+            app:layout_constraintTop_toTopOf="@+id/levantamientoModelo" />
+
+        <TextView
+            android:id="@+id/levantamientoModelo"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_border"
+            android:text="@{levantamientoItem.modelo}"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintStart_toStartOf="@+id/levantamientoSala"
+            app:layout_constraintTop_toBottomOf="@+id/levantamientoSala"
+            tools:text="MODELO" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

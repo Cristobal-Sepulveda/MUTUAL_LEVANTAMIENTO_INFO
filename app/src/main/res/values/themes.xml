@@ -14,8 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.OneMatchProject.NoActionBar" parent="Theme.MUTUAL_LEVANTAMIENTO">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 </resources>

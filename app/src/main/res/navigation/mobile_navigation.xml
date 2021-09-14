@@ -8,20 +8,33 @@
 
     <fragment
         android:id="@+id/nav_listadoDeLevantamientos"
-        android:name="com.example.android.mutual_levantamiento.ui.listadoDeLevantamientos.ListadoDeLevantamientosFragment"
+        android:name="com.example.android.mutualLevantamiento.ui.listadoDeLevantamientos.ListadoDeLevantamientosFragment"
         android:label="@string/menu__listado_levantamiento"
-        tools:layout="@layout/fragment_listado_de_levantamientos"/>
+        tools:layout="@layout/fragment_listado_de_levantamientos">
+        <action
+            android:id="@+id/action_nav_listadoDeLevantamientos_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_nuevoLevantamientoFragment"
-        android:name="com.example.android.mutual_levantamiento.ui.nuevoLevantamiento.NuevoLevantamientoFragment"
+        android:name="com.example.android.mutualLevantamiento.ui.nuevoLevantamiento.NuevoLevantamientoFragment"
         android:label="@string/menu_nuevo"
         tools:layout="@layout/fragment_nuevo_levantamiento"/>
 
     <fragment
         android:id="@+id/nav_finalizandoMigracionFragment"
-        android:name="com.example.android.mutual_levantamiento.ui.FinalizandoMigracionFragment"
+        android:name="com.example.android.mutualLevantamiento.ui.FinalizandoMigracionFragment"
         android:label="@string/menu_cierre"
         tools:layout="@layout/fragment_finalizando_migracion"/>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.android.mutualLevantamiento.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="levantamientoSeleccionado"
+            app:argType="com.example.android.mutualLevantamiento.data.domainObject.LEVANTAMIENTO" />
+    </fragment>
 
 </navigation>

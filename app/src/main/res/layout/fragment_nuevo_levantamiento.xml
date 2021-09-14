@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.android.mutual_levantamiento.ui.nuevoLevantamiento.NuevoLevantamientoViewModel" />
+            type="com.example.android.mutualLevantamiento.ui.nuevoLevantamiento.NuevoLevantamientoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
