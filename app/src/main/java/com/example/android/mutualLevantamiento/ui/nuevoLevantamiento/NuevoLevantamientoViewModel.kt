@@ -28,6 +28,7 @@ class NuevoLevantamientoViewModel(
                 dataSource.savingLevantamientoToLocalDatabase(levantamiento)
             }catch(ex: Exception){
                 showSnackBar.value = "No se pudo guardar el levantamiento en la Base de Datos"
+                saveLevantamiento(levantamiento)
             }
         }
     }

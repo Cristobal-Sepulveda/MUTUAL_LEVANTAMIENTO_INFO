@@ -7,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
-import com.example.android.mutualLevantamiento.Adapter.LevantamientoAdapter
+import com.example.android.mutualLevantamiento.adapter.LevantamientoAdapter
 import com.example.android.mutualLevantamiento.R
 import com.example.android.mutualLevantamiento.base.BaseFragment
 import com.example.android.mutualLevantamiento.databinding.FragmentListadoDeLevantamientosBinding
-import com.example.android.mutualLevantamiento.ui.nuevoLevantamiento.NuevoLevantamientoViewModel
 import org.koin.android.ext.android.inject
 
 class ListadoDeLevantamientosFragment: BaseFragment() {
@@ -47,13 +46,9 @@ class ListadoDeLevantamientosFragment: BaseFragment() {
                 _viewModel.displayLevantamientoDetailsComplete()
             }
         })
-
-
-
-
-
-
-
+        _viewModel.levantamientosListInDatabase.observe(viewLifecycleOwner,{
+            Log.i("TAG", "$it")
+        })
 
         return binding.root
     }

@@ -1,4 +1,4 @@
-package com.example.android.mutualLevantamiento.Adapter
+package com.example.android.mutualLevantamiento.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

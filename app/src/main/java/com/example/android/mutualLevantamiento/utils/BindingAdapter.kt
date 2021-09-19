@@ -19,7 +19,7 @@ package com.example.android.mutualLevantamiento.utils
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.mutualLevantamiento.Adapter.LevantamientoAdapter
+import com.example.android.mutualLevantamiento.adapter.LevantamientoAdapter
 import com.example.android.mutualLevantamiento.data.domainObject.LEVANTAMIENTO
 
 
